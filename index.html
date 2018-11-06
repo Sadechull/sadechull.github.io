@@ -259,6 +259,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/Machine-Learing-2017-Fall-学习笔记（二）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sadechull">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飒涤秋的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/06/Machine-Learing-2017-Fall-学习笔记（二）/" itemprop="url">Machine Learing(2017 Fall) 学习笔记（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-06T22:39:24+08:00">
+                2018-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learing-2017-Fall-学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learing(2017 Fall) 学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2017/Lecture/Classification%20(v2" target="_blank" rel="noopener">ppt链接</a>.pdf)</p>
+<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><ul>
+<li>分类与回归的不同：容易受较大偏离数据影响，不应用单一数值衡量</li>
+<li>条件概率：贝叶斯公式+最大似然估计——使圈出的区域取出指定分类的概率最大</li>
+<li>圈区域的方法：多元高斯分布—— $N(\mu,\Sigma)$，$\mu$是特征集的均值矢量，$\Sigma$是特征集之间的互相关矩阵</li>
+<li>最大似然：对于每一个分类找到$\mu$和$\Sigma$使训练集中的所有准确分类概率的乘积最大</li>
+<li>分类：根据得到的$\mu$和$\Sigma$计算条件概率，根据概率大小划分分类</li>
+<li>修正模型：使不同分类有相同$\Sigma$，求出每个分类的$\mu$和相同的$\Sigma$，这样会导致边界是线性的</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/Machine-Learing-2017-Fall-学习笔记（一）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -387,7 +537,9 @@
 <li>Feature Scaling: 针对步长不同的x调整特征为均值为零方差为1的序列</li>
 <li>数学推导：多元泰勒展开</li>
 </ul>
-<h2 id="HW1-PM2-5-Prediction"><a href="#HW1-PM2-5-Prediction" class="headerlink" title="HW1-PM2.5 Prediction"></a>HW1-PM2.5 Prediction</h2><p>-</p>
+<h2 id="HW1-PM2-5-Prediction"><a href="#HW1-PM2-5-Prediction" class="headerlink" title="HW1-PM2.5 Prediction"></a>HW1-PM2.5 Prediction</h2><ul>
+<li>train.csv非utf-8编码，用sublime text打开之前需要用package control安装Codecs33插件</li>
+</ul>
 
           
         
@@ -839,7 +991,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
