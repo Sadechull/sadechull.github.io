@@ -504,7 +504,13 @@
 </ul>
 <h2 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h2><ul>
 <li>S型函数：<br>$$ \sigma(z)=\frac{1}{1+\exp^{-z}}$$</li>
-<li>交叉熵：<br>$$ -\ln L(w,b)=\sum_{n}-[\hat{y}^n\ln f_{w,b}(x^n)+(1-\hat y^n)\ln(1-f_{w,b}(x^n))]$$</li>
+<li>交叉熵（二分类）：<br>$$ -\ln L(w,b)=\sum_{n}-[\hat{y}^n\ln f_{w,b}(x^n)+(1-\hat y^n)\ln(1-f_{w,b}(x^n))]$$</li>
+<li>逻辑回归一般使用交叉熵而不是平方误差作为损失函数，因为这样更容易回归到最佳解</li>
+<li>逻辑回归和线性回归的步骤相同，结果也相同</li>
+<li>生成模型（Generative）v.s. 判别模型（Discriminative）</li>
+<li>判别模型一般准确率较高，但生成模型基于概率分布，需要训练数据量更少，对噪声更不敏感，可以学习隐变量</li>
+<li>交叉熵（多分类）：<br>$$ –\ln L(w,b)=\sum_{n}-[\hat{y}_i\ln y_i]$$</li>
+<li>级联逻辑回归——深度学习的基础</li>
 </ul>
 
           
