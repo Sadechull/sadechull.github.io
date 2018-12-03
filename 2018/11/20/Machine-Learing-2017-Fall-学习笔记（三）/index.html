@@ -79,15 +79,18 @@
 
 
 
+<meta name="description" content="ppt链接ppt链接 Deep Learning 深度学习“三步走”：构造神经网络-&amp;gt;模型评估-&amp;gt;选择最佳模型 输入向量经过若干层神经网络得到输出向量  例子——手写数字识别  Backpropagation 反向传播 通过链式法则求梯度是，需要先从前往后推到，从后往前推导  “Hello world” of deep learning MNIST手写体数字识别 keras提供设定好的">
 <meta name="keywords" content="Machine Learing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine-Learing-2017-Fall-学习笔记（三）">
 <meta property="og:url" content="http://yoursite.com/2018/11/20/Machine-Learing-2017-Fall-学习笔记（三）/index.html">
 <meta property="og:site_name" content="飒涤秋的博客">
+<meta property="og:description" content="ppt链接ppt链接 Deep Learning 深度学习“三步走”：构造神经网络-&amp;gt;模型评估-&amp;gt;选择最佳模型 输入向量经过若干层神经网络得到输出向量  例子——手写数字识别  Backpropagation 反向传播 通过链式法则求梯度是，需要先从前往后推到，从后往前推导  “Hello world” of deep learning MNIST手写体数字识别 keras提供设定好的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-20T15:20:35.673Z">
+<meta property="og:updated_time" content="2018-12-03T14:55:07.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine-Learing-2017-Fall-学习笔记（三）">
+<meta name="twitter:description" content="ppt链接ppt链接 Deep Learning 深度学习“三步走”：构造神经网络-&amp;gt;模型评估-&amp;gt;选择最佳模型 输入向量经过若干层神经网络得到输出向量  例子——手写数字识别  Backpropagation 反向传播 通过链式法则求梯度是，需要先从前往后推到，从后往前推导  “Hello world” of deep learning MNIST手写体数字识别 keras提供设定好的">
 
 
 
@@ -349,7 +352,29 @@
       
 
       
-        
+        <p><a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2017/Lecture/DL.pdf" target="_blank" rel="noopener">ppt链接</a><br><a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2017/Lecture/BP%20(v2).pdf" target="_blank" rel="noopener">ppt链接</a></p>
+<h2 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h2><ul>
+<li>深度学习“三步走”：构造神经网络-&gt;模型评估-&gt;选择最佳模型</li>
+<li>输入向量经过若干层神经网络得到输出向量 </li>
+<li>例子——手写数字识别</li>
+</ul>
+<h2 id="Backpropagation-反向传播"><a href="#Backpropagation-反向传播" class="headerlink" title="Backpropagation 反向传播"></a>Backpropagation 反向传播</h2><ul>
+<li>通过链式法则求梯度是，需要先从前往后推到，从后往前推导</li>
+</ul>
+<h2 id="“Hello-world”-of-deep-learning"><a href="#“Hello-world”-of-deep-learning" class="headerlink" title="“Hello world” of deep learning"></a>“Hello world” of deep learning</h2><ul>
+<li>MNIST手写体数字识别</li>
+<li>keras提供设定好的loss,optimizer,activtion等函数</li>
+<li>batch: 将训练及随机分为多个mini-batch分别计算total loss，依次更新所有的参数，这一步叫一个epoch</li>
+<li>mini-batch和stochastic gradient descent比较：gpu性能对比，mini-batch更稳定更快，但batch size不能太高 </li>
+</ul>
+<h2 id="Keras-2-0变动"><a href="#Keras-2-0变动" class="headerlink" title="Keras 2.0变动"></a>Keras 2.0变动</h2><ul>
+<li>output-dim -&gt; units<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers.core <span class="keyword">import</span> Dense, Dropout, Activation</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Conv2D, MaxPooling2D, Flatten</span><br><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> SGD, Adam</span><br><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> np_utils</span><br><span class="line"><span class="keyword">from</span> keras.datasets <span class="keyword">import</span> mnist</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">()</span>:</span></span><br><span class="line">    (x_train, y_train), (x_test, y_test) = mnist.load_data()</span><br><span class="line">    number =<span class="number">10000</span></span><br><span class="line">    x_train = x_train[<span class="number">0</span>:number]</span><br><span class="line">    y_train = y_train[<span class="number">0</span>:number]</span><br><span class="line">    x_train = x_train.reshape(number, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line">    x_test = x_test.reshape(x_test.shape[<span class="number">0</span>],<span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line">    x_train = x_train.astype(<span class="string">'float32'</span>)</span><br><span class="line">    x_test = x_train.astype(<span class="string">'float32'</span>)</span><br><span class="line">    y_train = np_utils.to_categorical(y_train, <span class="number">10</span>)</span><br><span class="line">    y_test = np_utils.to_categorical(y_test, <span class="number">10</span>)</span><br><span class="line">    x_train = x_train</span><br><span class="line">    x_test = x_test</span><br><span class="line">    x_train = x_train/<span class="number">255</span></span><br><span class="line">    x_test = x_test/<span class="number">255</span></span><br><span class="line">    <span class="keyword">return</span> (x_train, y_train), (x_test, y_test)</span><br><span class="line"></span><br><span class="line">(x_train, y_train), (x_test, y_test) = load_data()</span><br><span class="line"></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(input_dim=<span class="number">28</span>*<span class="number">28</span>,units=<span class="number">689</span>,activation=<span class="string">'sigmoid'</span>))</span><br><span class="line"></span><br><span class="line">model.add(Dense(units=<span class="number">10</span>,activation=<span class="string">'softmax'</span>))</span><br><span class="line"></span><br><span class="line">model.compile(loss=<span class="string">'mse'</span>,optimizer=Adam(lr=<span class="number">0.1</span>),metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line"></span><br><span class="line">model.fit(x_train,y_train,batch_size=<span class="number">100</span>,epochs=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">result = model.evaluate(x_test,y_test)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'\nTest Acc:'</span>, result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>结果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test Acc: 0.098</span><br></pre></td></tr></table></figure></p>
+<p>改进后的代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers.core <span class="keyword">import</span> Dense, Dropout, Activation</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Conv2D, MaxPooling2D, Flatten</span><br><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> SGD, Adam</span><br><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> np_utils</span><br><span class="line"><span class="keyword">from</span> keras.datasets <span class="keyword">import</span> mnist</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">()</span>:</span></span><br><span class="line">    (x_train, y_train), (x_test, y_test) = mnist.load_data()</span><br><span class="line">    number =<span class="number">10000</span></span><br><span class="line">    x_train = x_train[<span class="number">0</span>:number]</span><br><span class="line">    y_train = y_train[<span class="number">0</span>:number]</span><br><span class="line">    x_train = x_train.reshape(number, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line">    x_test = x_test.reshape(x_test.shape[<span class="number">0</span>],<span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line">    x_train = x_train.astype(<span class="string">'float32'</span>)</span><br><span class="line">    x_test = x_test.astype(<span class="string">'float32'</span>)</span><br><span class="line">    y_train = np_utils.to_categorical(y_train, <span class="number">10</span>)</span><br><span class="line">    y_test = np_utils.to_categorical(y_test, <span class="number">10</span>)</span><br><span class="line">    x_train = x_train</span><br><span class="line">    x_test = x_test</span><br><span class="line">    x_train = x_train/<span class="number">255</span></span><br><span class="line">    x_test = x_test/<span class="number">255</span></span><br><span class="line">    <span class="keyword">return</span> (x_train, y_train), (x_test, y_test)</span><br><span class="line"></span><br><span class="line">(x_train, y_train), (x_test, y_test) = load_data()</span><br><span class="line"></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(input_dim=<span class="number">28</span>*<span class="number">28</span>,units=<span class="number">689</span>,activation=<span class="string">'sigmoid'</span>))</span><br><span class="line"></span><br><span class="line">model.add(Dense(units=<span class="number">10</span>,activation=<span class="string">'softmax'</span>))</span><br><span class="line"></span><br><span class="line">model.compile(loss=<span class="string">'mse'</span>,optimizer=Adam(lr=<span class="number">0.1</span>),metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line"></span><br><span class="line">model.fit(x_train,y_train,batch_size=<span class="number">100</span>,epochs=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">result = model.evaluate(x_test,y_test)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'\nTest Acc:'</span>, result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test Acc: 0.9832</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -439,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -500,6 +534,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Learning"><span class="nav-number">1.</span> <span class="nav-text">Deep Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backpropagation-反向传播"><span class="nav-number">2.</span> <span class="nav-text">Backpropagation 反向传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“Hello-world”-of-deep-learning"><span class="nav-number">3.</span> <span class="nav-text">“Hello world” of deep learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keras-2-0变动"><span class="nav-number">4.</span> <span class="nav-text">Keras 2.0变动</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
