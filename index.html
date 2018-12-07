@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/Machine-Learing-2017-Fall-学习笔记（四）-md/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/Machine-Learing-2017-Fall-学习笔记（四）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sadechull">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/07/Machine-Learing-2017-Fall-学习笔记（四）-md/" itemprop="url">Machine-Learing-2017-Fall-学习笔记（四）.md</a></h1>
+                <a class="post-title-link" href="/2018/12/07/Machine-Learing-2017-Fall-学习笔记（四）/" itemprop="url">Machine-Learing-2017-Fall-学习笔记（四）.md</a></h1>
         
 
         <div class="post-meta">
@@ -359,6 +359,13 @@
 <li>Sigmoid函数会导致多层神经网络的梯度消失，可以用ReLU（Rectified Linear Unit,线性整流单元）函数代替</li>
 <li>ReLU的结果会使网络变成简化的线形网络，它是Maxout的特例</li>
 <li>Maxout：分段线性激活函数</li>
+<li>Adapting Learning Rate:<br>RMSProp 加权的Adagrad<br>在Gradient Descent中引入动量(Momentum)的概念来避开局部最小：<br>  一次移动方向由这一次的GD方向和上一次移动方向共同决定，进一步归纳<br>  即一次移动方向由之前所有次移动方向决定<br>Adam: = RMSProp + Momentum(训练速度比较快)</li>
+<li>训练结果好但测试结果不好的解决办法<ul>
+<li>Early Stopping: 用验证集在适当的时候暂停update，防止过拟合</li>
+<li>正则化：寻找较小的weight<br>  L2 regularization: weight decay(逐渐抛弃无用神经元)<br>  L1 regularization: 定长波动</li>
+<li>Dropout: 每次p%的神经元被抛弃（每个神经元有p%的概率被抛弃）<br>  测试时需要将weight乘上1-p%<br>  在线性网络中表现更好</li>
+</ul>
+</li>
 </ul>
 
           
