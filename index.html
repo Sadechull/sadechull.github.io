@@ -370,8 +370,12 @@
 <h2 id="Convolutional-Neural-Network"><a href="#Convolutional-Neural-Network" class="headerlink" title="Convolutional Neural Network"></a>Convolutional Neural Network</h2><ul>
 <li>CNN适用于图像识别</li>
 <li>一般流程 Convolution -&gt; MaxPooling -&gt; flatten</li>
-<li>过滤器卷积核：用来寻找特定特征</li>
+<li>过滤器卷积核：用来寻找特定特征，匹配度越高得到值越大（有点类似于相关）,<br>可以有多个输入Channel(如彩色图片的RGB)，通常过滤器随着网络深入而变多</li>
 <li>CNN可以看作Fully-connected NN的简化（减少输入，共享权值）</li>
+<li>Max Pooling: 取卷积结果的局部最大值组成新的小矩阵，所以图片会越来越小</li>
+<li>Flatten：得到合适的小图像之后，将每个Channel的矩阵拉直做fcnn</li>
+<li>CNN通过学习找到一张输入图像，让输出图片所有元的和最大</li>
+<li>AlphaGo: 输入为19<em>18</em>48，第一层使用5<em>5过滤器，2-12层使用3</em>3过滤器，<br>外围补零，没有使用Max pooling</li>
 </ul>
 
           
